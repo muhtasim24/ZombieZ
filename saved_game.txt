@@ -1,0 +1,26 @@
+{"round": 2, "max_enemies": 5, "max_max_enemies": 15, "spawned_enemies": 4, "killed_round_enemies": 5, "max_round_enemies": 10, "max_max_round_enemies": 50, "spawn_rate": 1000, "enemy_stats": {"current_health": 10, "max_health": 10, "damage": 1, "speed": 2}, "max_enemy_stats": {"current_health": 1000, "max_health": 1000, "damage": 50, "speed": 10}, "spawn_boss": false, "spawned_bosses": 0, "boss_quantity": 1, "resetting_round": false}
+
+------game_instance/player boundary------
+
+--begin_player--
+{"location": [743, 323], "rotation": 0, "current_health": 100, "max_health": 100, "damage": 10, "speed": 5, "stats": {"rounds": 1, "kills": 10, "dmg_taken": 0, "dmg_dealt": 100}}
+
+------player/enemy boundary------
+
+--begin_enemy--
+{"location": [186, 70], "rotation": 23.45902408146156, "scale": 1, "current_health": 10, "max_health": 10, "damage": 1, "speed": 2}
+
+--begin_enemy--
+{"location": [1148, 287], "rotation": 178.28822182094743, "scale": 1, "current_health": 10, "max_health": 10, "damage": 1, "speed": 2}
+
+--begin_enemy--
+{"location": [57, 565], "rotation": -21.981066424115774, "scale": 1, "current_health": 10, "max_health": 10, "damage": 1, "speed": 2}
+
+--begin_enemy--
+{"location": [985, 836], "rotation": -116.73519404596257, "scale": 1, "current_health": 10, "max_health": 10, "damage": 1, "speed": 2}
+
+------enemy/item boundary------
+
+--health_potion--
+{"location": [633, 230], "health": 10}
+

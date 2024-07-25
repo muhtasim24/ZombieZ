@@ -1,0 +1,57 @@
+import unittest
+import os
+import pickle
+import sys
+import pygame
+from New_game_and_load_game import load_game,new_game,save_game,game_data
+
+class TestGame(unittest.TestCase):
+
+    def setUp(self):
+        pygame.init()
+        self.screen = pygame.display.set_mode((800, 600))
+        self.font = pygame.font.Font(None, 36)
+        self.saved_game_file = "saved_game.dat"
+        self.game_data = {
+        
+        }
+
+    def tearDown(self):
+        pygame.quit()
+        os.remove(self.saved_game_file)
+
+    def test_new_game(self):
+        # Ensure game_data is empty before starting new game
+        self.assertEqual(len(self.game_data), 0)
+
+        # Call new_game() function
+        new_game()
+
+        # Ensure game_data is still empty after starting new game
+        self.assertEqual(len(self.game_data), 0)
+
+    def test_save_game(self):
+        # Call save_game() function
+        save_game()
+
+        # Ensure saved_game_file exists
+        self.assertTrue(os.path.exists(self.saved_game_file))
+
+        # Ensure saved game data matches expected data
+        with open(self.saved_game_file, "rb") as f:
+            saved_data = pickle.load(f)
+        self.assertEqual(saved_data, self.game_data)
+
+    def test_load_game(self):
+        # Save game data to file
+        with open(self.saved_game_file, "wb") as f:
+            pickle.dump(self.game_data, f)
+
+        # Call load_game() function
+        load_game()
+
+        # Ensure loaded game data matches expected data
+        self.assertEqual(game_data, self.game_data)
+
+if __name__ == '__main__':
+    unittest.main()
